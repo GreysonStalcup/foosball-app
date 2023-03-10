@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import TopPlayers from "../Components/TopPlayers";
 
 const Dashboard = (props) => {
-  return <div>Dashboard</div>;
+  return <TopPlayers />;
 };
 
 Dashboard.propTypes = {};
