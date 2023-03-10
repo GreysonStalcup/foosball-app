@@ -1,5 +1,6 @@
 import React from 'react'
 import { getAuth } from 'firebase/auth'
+import { Link } from 'react-router-dom';
 export default function ManageAccount() {
   const auth = getAuth();
   const user = auth.currentUser;
@@ -13,7 +14,7 @@ export default function ManageAccount() {
        <div className="flex">
          <p className="whitespace-nowrap self-center pr-3 font-extralight text-sm">{ user.displayName }</p> <img className='rounded-full'src={ user.photoURL } />
        </div>
-      : <p className="whitespace-nowrap self-center pr-3 font-extralight text-sm">Login</p>}
+      : <Link to="/login" className="whitespace-nowrap self-center pr-3 font-extralight text-sm">Login</Link>}
     </div>
   )
 }
