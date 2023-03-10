@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "contributors": [
+    {
+      "name": "Greyson Stalcup"
+    },
+    {
+      "name": "Mark Rodgers",
+      "email": "mark@marknrodgers.com"
+    }
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
