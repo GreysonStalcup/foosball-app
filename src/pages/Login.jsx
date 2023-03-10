@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
   const emailRef = useRef(null);
@@ -15,9 +16,9 @@ const Login = () => {
     if (loading) return;
     setLoading(true);
 
-    login(emailRef.current.value, passwordRef.current.value)
+    await login(emailRef.current.value, passwordRef.current.value)
       .then(() => {
-        // TODO: needs to redirect after logging out
+        <Navigate replace to="/dashboard" />
       })
       .catch((err) => {
         setError(err.message);
