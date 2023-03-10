@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Scoreboard from './Scoreboard';
 import SignUp from '../auth_signup_password';
+import Header from './Header';
 function Home() {
   return (
     <div>
