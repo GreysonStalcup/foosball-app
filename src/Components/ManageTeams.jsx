@@ -26,7 +26,7 @@ function ManageTeams({ saveTeamData }) {
     setShowRecordScoreForm(!showRecordScoreForm);
     if(showNewTeamForm) setShowNewTeamForm(!showNewTeamForm);
   };
-  
+
 
 
 
@@ -37,7 +37,7 @@ function ManageTeams({ saveTeamData }) {
       <Link className="text-2xl" to="/"><h4>⬅ Return Home</h4></Link>
     </div>
     <div className="grid h-screen place-items-center bg-gray-100">
-      
+
       <div className="text-center mx-8 my-8 w-3/4 h-auto bg-white shadow-md rounded-lg p-8">
         <h1 className="text-4xl font-bold mb-4">Manage Teams</h1>
         <h3 className="text-lg font-medium mb-4">Current Teams</h3>
@@ -47,7 +47,7 @@ function ManageTeams({ saveTeamData }) {
               <li key={teamId} className="mb-4">
                 <h4 className="text-xl font-medium mb-2">{teams[teamId].name}</h4>
                 <ul>
-                  {teams[teamId].players.map((player, index) => (
+                  {teams[teamId].players && teams[teamId].players.map((player, index) => (
                     <li key={index} className="text-sm mb-1">
                       {player}
                     </li>
