@@ -3,7 +3,8 @@ import NewTeamForm from "../forms/NewTeamForm";
 import { listenForTeamData, saveScoreData, deleteTeamData } from "../firebase";
 import RecordScore from "../forms/RecordScore";
 import { Link } from "react-router-dom";
-function ManageTeams({ saveTeamData }) {
+
+const ManageTeams = ({ saveTeamData }) => {
   const [teams, setTeams] = useState([]);
   const [showNewTeamForm, setShowNewTeamForm] = useState(false);
   const [showRecordScoreForm, setShowRecordScoreForm] = useState(false);
@@ -95,6 +96,6 @@ function ManageTeams({ saveTeamData }) {
       </div>
     </>
   );
-}
+};
 
 export default ManageTeams;

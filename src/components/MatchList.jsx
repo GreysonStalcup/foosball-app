@@ -1,6 +1,6 @@
-import Match from './Match';
+import Match from "./Match";
 
-function MatchList({ matchData, onSaveMatchData }) {
+const MatchList = ({ matchData, onSaveMatchData }) => {
   const matchIds = Object.keys(matchData);
 
   if (matchIds.length === 0) {
@@ -10,7 +10,6 @@ function MatchList({ matchData, onSaveMatchData }) {
   return (
     <div className="MatchList">
       {matchIds.map((matchId) => (
-        
         <Match
           key={matchId}
           matchId={matchId}
@@ -20,6 +19,6 @@ function MatchList({ matchData, onSaveMatchData }) {
       ))}
     </div>
   );
-}
+};
 
 export default MatchList;

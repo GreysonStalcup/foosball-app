@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
-function AddScore({ teamId, onSaveScore }) {
+const AddScore = ({ teamId, onSaveScore }) => {
   const [score, setScore] = useState(0);
 
   const handleScoreChange = (event) => {
@@ -31,5 +32,11 @@ function AddScore({ teamId, onSaveScore }) {
       </div>
     </div>
   );
+};
+
+AddScore.propTypes = {
+  teamId: PropTypes.number.isRequired,
+  onSaveScore: PropTypes.func.isRequired,
+};
 
 export default AddScore;

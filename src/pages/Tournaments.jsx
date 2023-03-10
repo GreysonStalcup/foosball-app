@@ -1,10 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-const Tournaments = (props) => {
+const Tournaments = () => {
   return <div>Tournaments</div>;
 };
-
-Tournaments.propTypes = {};
 
 export default Tournaments;

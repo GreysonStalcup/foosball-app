@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-function Match({ matchId, match, onSaveMatchData }) {
+const Match = ({ matchId, match, onSaveMatchData }) => {
   const [localMatchData, setLocalMatchData] = useState(match);
 
   const handleInputChange = (event) => {
@@ -13,7 +13,6 @@ function Match({ matchId, match, onSaveMatchData }) {
   };
 
   const handleSaveClick = () => {
-    
     onSaveMatchData(matchId, localMatchData);
   };
 
@@ -45,6 +44,6 @@ function Match({ matchId, match, onSaveMatchData }) {
       <button onClick={handleSaveClick}>Save</button>
     </div>
   );
-}
+};
 
 export default Match;

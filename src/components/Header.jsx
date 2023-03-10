@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ManageAccount from "./ManageAccount";
 
-export default function Header() {
+const Header = () => {
   return (
     <header>
       <div className="bg-white w-full h-24 top-0 left-0 shadow-md">
@@ -12,16 +12,16 @@ export default function Header() {
             <Link className="hover:text-gray-600" to="/dashboard">
               Dashboard
             </Link>
-            <Link className="hover:text-gray-600" to="/dashboard">
+            <Link to="/roster" className="hover:text-gray-600">
               Roster
             </Link>
-            <Link className="hover:text-gray-600" to="/dashboard">
+            <Link to="/matches" className="hover:text-gray-600">
               Matches
             </Link>
-            <Link className="hover:text-gray-600" to="/dashboard">
+            <Link to="/tournaments" className="hover:text-gray-600">
               Tournaments
             </Link>
-            <Link className="hover:text-gray-600" to="/dashboard">
+            <Link to="/leaderboards" className="hover:text-gray-600">
               Leaderboards
             </Link>
           </div>
@@ -32,4 +32,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;

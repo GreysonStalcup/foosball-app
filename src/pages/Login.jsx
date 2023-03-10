@@ -1,8 +1,7 @@
 import React, { useRef, useState } from "react";
-import PropTypes from "prop-types";
 import { useAuth } from "../context/AuthContext";
 
-const Login = (props) => {
+const Login = () => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
@@ -76,7 +75,5 @@ const Login = (props) => {
     </div>
   );
 };
-
-Login.propTypes = {};
 
 export default Login;

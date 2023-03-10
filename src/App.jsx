@@ -1,26 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Home from "./components/Home";
-import ManageTeams from "./components/ManageTeams";
-import Login from "./pages/Login";
-import SignOut from "./pages/SignOut";
 import Header from "./components/Header";
+import Home from "./components/Home";
+import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 import Dashboard from "./pages/Dashboard";
+import Roster from "./pages/Roster";
+import Matches from "./pages/Matches";
+import Tournaments from "./pages/Tournaments";
+import Leaderboards from "./pages/Leaderboards";
+import ManageTeams from "./components/ManageTeams";
 
-function App() {
+const App = () => {
   return (
     <div id="app">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<SignOut />} />
+        <Route path="/logout" element={<Logout />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/roster" element={<Roster />} />
+        <Route path="/matches" element={<Matches />} />
+        <Route path="/tournaments" element={<Tournaments />} />
+        <Route path="/leaderboards" element={<Leaderboards />} />
+        <Route path="/roster" element={<Dashboard />} />
         <Route path="/manage-teams" element={<ManageTeams />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );
-}
+};
 
 export default App;

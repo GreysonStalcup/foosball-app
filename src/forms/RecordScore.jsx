@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import SelectTeam from "../components/SelectTeam";
 
-function RecordScore({ teams, onSaveScore }) {
+const RecordScore = ({ teams, onSaveScore }) => {
   const [team1, setTeam1] = useState("");
   const [team2, setTeam2] = useState("");
   const [team1Score, setTeam1Score] = useState(0);
@@ -74,6 +75,11 @@ function RecordScore({ teams, onSaveScore }) {
       </button>
     </form>
   );
-}
+};
+
+RecordScore.propTypes = {
+  teams: PropTypes.array.isRequired,
+  onSaveScore: PropTypes.func.isRequired,
+};
 
 export default RecordScore;

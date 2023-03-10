@@ -1,10 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-const Leaderboards = (props) => {
+const Leaderboards = () => {
   return <div>Leaderboards</div>;
 };
-
-Leaderboards.propTypes = {};
 
 export default Leaderboards;
