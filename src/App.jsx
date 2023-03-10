@@ -11,13 +11,16 @@ import Tournaments from "./pages/Tournaments";
 import Leaderboards from "./pages/Leaderboards";
 import ManageTeams from "./components/ManageTeams";
 
+// TODO: only allow access to /login if unauthenticated
+// TODO: only allow access to /logout if authenticated
+
 const App = () => {
   return (
     <div id="app">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />{" "}
         <Route path="/logout" element={<Logout />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/roster" element={<Roster />} />

@@ -5,6 +5,7 @@ const Logout = () => {
 
   if (currentUser) {
     logout();
+    // TODO: needs to redirect after logging out
   }
 
   return (

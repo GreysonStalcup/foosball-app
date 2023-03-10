@@ -5,9 +5,14 @@ import ManageAccount from "./ManageAccount";
 const Header = () => {
   return (
     <header>
-      <div className="bg-white w-full h-24 top-0 left-0 shadow-md">
+      <div className="bg-white w-full h-24 top-0 left-0 shadow-md px-8">
         <div className="flex align-middle items-center h-full justify-between">
-          <div className="items-center h-full w-1/6">Logo</div>
+          <div className="items-center w-1/6 mr-8">
+            <img
+              src="https://placehold.jp/200x60.png?text=logo"
+              alt="Foosball League logo"
+            />
+          </div>
           <div className="flex space-x-7 font-extralight text-sm justify-start w-3/4">
             <Link className="hover:text-gray-600" to="/dashboard">
               Dashboard

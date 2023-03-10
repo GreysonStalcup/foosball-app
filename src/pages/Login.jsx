@@ -16,6 +16,9 @@ const Login = () => {
     setLoading(true);
 
     login(emailRef.current.value, passwordRef.current.value)
+      .then(() => {
+        // TODO: needs to redirect after logging out
+      })
       .catch((err) => {
         setError(err.message);
       })
