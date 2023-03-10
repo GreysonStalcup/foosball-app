@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Home from "./Components/Home";
-import ManageTeams from "./Components/ManageTeams";
+import Home from "./components/Home";
+import ManageTeams from "./components/ManageTeams";
 import Login from "./pages/Login";
-import SignOut from "./auth/SignOut";
-import Header from "./Components/Header";
+import SignOut from "./pages/SignOut";
+import Header from "./components/Header";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/manage-teams" element={<ManageTeams />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/logout" element={<SignOut />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/auth/logout" element={<SignOut />} />
+        <Route path="/manage-teams" element={<ManageTeams />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

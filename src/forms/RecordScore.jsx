@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SelectTeam from "../Components/SelectTeam";
+import SelectTeam from "../components/SelectTeam";
 
 function RecordScore({ teams, onSaveScore }) {
   const [team1, setTeam1] = useState("");
@@ -14,37 +14,65 @@ function RecordScore({ teams, onSaveScore }) {
   };
 
   return (
-    <form onSubmit={handleSaveScore} className="w-1/2 mx-auto mt-8 bg-white shadow-md rounded-md p-6">
-  <div className="mb-4">
-    <label htmlFor="team1" className="block text-gray-700 font-bold mb-2">Team 1:</label>
-    <SelectTeam teams={teams} onChange={setTeam1} className="w-full border rounded-md p-2" />
-  </div>
-  <div className="mb-4">
-    <label htmlFor="team1Score" className="block text-gray-700 font-bold mb-2">Team 1 Score:</label>
-    <input
-      type="number"
-      value={team1Score}
-      onChange={(e) => setTeam1Score(parseInt(e.target.value))}
-      className="w-full border rounded-md p-2"
-    />
-  </div>
-  <div className="mb-4">
-    <label htmlFor="team2" className="block text-gray-700 font-bold mb-2">Team 2:</label>
-    <SelectTeam teams={teams} onChange={setTeam2} className="w-full border rounded-md p-2" />
-  </div>
-  <div className="mb-4">
-    <label htmlFor="team2Score" className="block text-gray-700 font-bold mb-2">Team 2 Score:</label>
-    <input
-      type="number"
-      value={team2Score}
-      onChange={(e) => setTeam2Score(parseInt(e.target.value))}
-      className="w-full border rounded-md p-2"
-    />
-  </div>
-  <button type="submit" className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md">
-    Save Score
-  </button>
-</form>
+    <form
+      onSubmit={handleSaveScore}
+      className="w-1/2 mx-auto mt-8 bg-white shadow-md rounded-md p-6"
+    >
+      <div className="mb-4">
+        <label htmlFor="team1" className="block text-gray-700 font-bold mb-2">
+          Team 1:
+        </label>
+        <SelectTeam
+          teams={teams}
+          onChange={setTeam1}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          htmlFor="team1Score"
+          className="block text-gray-700 font-bold mb-2"
+        >
+          Team 1 Score:
+        </label>
+        <input
+          type="number"
+          value={team1Score}
+          onChange={(e) => setTeam1Score(parseInt(e.target.value))}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="team2" className="block text-gray-700 font-bold mb-2">
+          Team 2:
+        </label>
+        <SelectTeam
+          teams={teams}
+          onChange={setTeam2}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+      <div className="mb-4">
+        <label
+          htmlFor="team2Score"
+          className="block text-gray-700 font-bold mb-2"
+        >
+          Team 2 Score:
+        </label>
+        <input
+          type="number"
+          value={team2Score}
+          onChange={(e) => setTeam2Score(parseInt(e.target.value))}
+          className="w-full border rounded-md p-2"
+        />
+      </div>
+      <button
+        type="submit"
+        className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-md"
+      >
+        Save Score
+      </button>
+    </form>
   );
 }
 

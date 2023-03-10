@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TopPlayers from "../Components/TopPlayers";
+import TopPlayers from "../components/TopPlayers";
 
 const Dashboard = (props) => {
   return <TopPlayers />;
