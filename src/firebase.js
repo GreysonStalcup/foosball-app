@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import {
   getDatabase,
   ref,
@@ -21,10 +22,14 @@ const firebaseConfig = {
   databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
 };
 
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+const firebaseApp = initializeApp(firebaseConfig);
+
+export const auth = getAuth(firebaseApp);
+
+export const database = getDatabase(firebaseApp);
+
 export const getRealtimeDatabase = () => {
-  return getDatabase(app);
+  return getDatabase(firebaseApp);
 };
 
 export function listenForTeamData(callback) {
@@ -84,3 +89,5 @@ export function deleteTeamData(teamId) {
     console.log(e);
   }
 }
+
+export default firebaseApp;
