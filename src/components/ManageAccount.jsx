@@ -22,7 +22,7 @@ const ManageAccount = () => {
             alt={displayName}
             src={
               currentUser.photoURL ??
-              `https://placehold.jp/42/dd6699/ffffff/100x100.png?text=${displayName[0].toUpperCase()}`
+              `https://placehold.jp/42/567d46/ffffff/100x100.png?text=${displayName[0].toUpperCase()}`
             }
             className="rounded-full"
           />

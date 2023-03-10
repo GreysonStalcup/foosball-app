@@ -16,7 +16,7 @@ import ManageTeams from "./components/ManageTeams";
 
 const App = () => {
   return (
-    <div id="app">
+    <div className="min-h-screen bg-gray-100">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

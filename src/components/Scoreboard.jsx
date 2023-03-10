@@ -39,7 +39,7 @@ const Scoreboard = () => {
       )}
       {/* scoreboard */}
 
-      <div className="grid h-screen place-items-center bg-gray-100">
+      <div className="grid h-screen place-items-center">
         <div className="text-center mx-8 my-8 w-3/4 h-auto bg-white shadow-md rounded-lg p-8">
           <h2 className="text-2xl font-bold mb-4 text-center">Scoreboard</h2>
           <div className="grid grid-cols-1 gap-4 w-1/2 text-center mx-auto">
