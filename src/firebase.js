@@ -1,14 +1,24 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue, set, push, get, orderByChild, query, limitToFirst } from "firebase/database";
+import {
+  getDatabase,
+  ref,
+  onValue,
+  set,
+  push,
+  get,
+  orderByChild,
+  query,
+  limitToFirst,
+} from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDD6W_dowUCnUHPtU7-4aU7o-P21LSM-c0",
-  authDomain: "foosball-aa9fd.firebaseapp.com",
-  projectId: "foosball-aa9fd",
-  storageBucket: "foosball-aa9fd.appspot.com",
-  messagingSenderId: "418882552712",
-  appId: "1:418882552712:web:d375bd0712f19f5fa6f03d",
-  databaseURL: "https://foosball-aa9fd-default-rtdb.firebaseio.com/",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -60,18 +70,17 @@ export function listenForScores(callback) {
 }
 
 export function saveTeamData(team) {
-  try{
-  push(ref(database, "teams"), team);
-  }catch(e){
+  try {
+    push(ref(database, "teams"), team);
+  } catch (e) {
     console.log(e);
   }
 }
 
 export function deleteTeamData(teamId) {
-  try{
-    set(ref(database, 'teams/' + teamId), null);
-  }catch(e){
+  try {
+    set(ref(database, "teams/" + teamId), null);
+  } catch (e) {
     console.log(e);
   }
 }
-
