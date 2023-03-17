@@ -11,13 +11,14 @@ import Tournaments from "./pages/Tournaments";
 import Leaderboards from "./pages/Leaderboards";
 import ManageTeams from "./components/ManageTeams";
 import NotFound from "./pages/NotFound";
+import Players from "./pages/Players";
 
 // TODO: only allow access to /login if unauthenticated
 // TODO: only allow access to /logout if authenticated
 
 const App = () => {
   return (
-    <div className="h-[calc(100vh_-_)] screen bg-gray-100">
+    <div className="h-screenbg-gray-100">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} errorElement={<NotFound />} />
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} errorElement={<NotFound />} />
         <Route path="/roster" element={<Roster />} />
         <Route path="/matches" element={<Matches />} />
+        <Route path="/players" element={<Players />} />
         <Route path="/tournaments" element={<Tournaments />} />
         <Route path="/leaderboards" element={<Leaderboards />} />
         <Route path="/roster" element={<Dashboard />} />

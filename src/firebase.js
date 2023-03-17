@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { collection, doc, getDoc, getDocs, getFirestore, query, orderBy } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import {
   getDatabase,
@@ -8,7 +9,6 @@ import {
   push,
   get,
   orderByChild,
-  query,
   limitToFirst,
 } from "firebase/database";
 
@@ -21,7 +21,8 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
   databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
 };
-
+const fireStoreApp = initializeApp(firebaseConfig);
+const fireStoreDB = getFirestore(fireStoreApp);
 const firebaseApp = initializeApp(firebaseConfig);
 
 export const auth = getAuth(firebaseApp);
@@ -88,6 +89,18 @@ export function deleteTeamData(teamId) {
   } catch (e) {
     console.log(e);
   }
+}
+export async function getAllPlayers() {
+  const playersCollection = collection(fireStoreDB, 'players');
+  const playersQuery = query(playersCollection, orderBy('wins', 'desc'));
+  const querySnapshot = await getDocs(playersQuery);
+  
+  const players = [];
+  querySnapshot.forEach((doc) => {
+    players.push({ id: doc.id, ...doc.data() });
+  });
+  
+  return players;
 }
 
 export default firebaseApp;
